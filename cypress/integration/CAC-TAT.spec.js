@@ -13,7 +13,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
  
   
     it('concluindo o cadastro e verificando que deu sucesso', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -24,7 +23,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('escrevendo texto longo com 0 de delay', function() {
-  
         const longText = 'Teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste'
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
@@ -36,7 +34,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('campo de telefone so permite digitar numero e nao outro caracteres, valide isso', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -49,7 +46,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
      })
 
     it('exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -62,7 +58,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('preenche e limpa os campos nome, sobrenome, email e telefone', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas').should('have.value', 'Lucas').clear().should('have.value','')
         cy.get('#lastName').type('Abe Bolzani').should('have.value', 'Abe Bolzani').clear().should('have.value','')
@@ -75,7 +70,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#open-text-area').type('Teste')
         cy.get('.button').click()
@@ -83,13 +77,11 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('envia o formuário com sucesso usando um comando customizado', function() {
-  
         cy.fillMandatoryFieldsAndSubmit()
         cy.get('.success').should('be.visible')
     })
 
     it('concluindo o cadastro e verificando que deu sucesso usando o contains para enviar', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -100,7 +92,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('seleciona um produto (YouTube) por seu texto', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -110,7 +101,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('seleciona um produto (Mentoria) por seu valor (value)', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -120,7 +110,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('seleciona um produto (Blog) por seu índice', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -130,7 +119,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('marca o tipo de atendimento "Feedback"', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -141,7 +129,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('marca cada tipo de atendimento', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -154,14 +141,12 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('marca ambos checkboxes, depois desmarca o último', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('input[type="checkbox"]').check().last().uncheck().should('not.be.checked')
           
     })
 
     it('marca cada tipo de atendimento', function() {
-  
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
         cy.get('#firstName').type('Lucas')
         cy.get('#lastName').type('Abe Bolzani')
@@ -175,7 +160,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('seleciona um arquivo da pasta fixture', function() {
-  
         cy.get('input[type="file"]').selectFile('./cypress/fixtures/example.json').should(function($input) {
             expect($input[0].files[0].name).to.equal('example.json')
         })
@@ -183,7 +167,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('seleciona um arquivo simulando um drag-and-drop', function() {
-  
         cy.get('input[type="file"]').selectFile('./cypress/fixtures/example.json', {action: 'drag-drop'} ).should(function($input) {
             expect($input[0].files[0].name).to.equal('example.json')
         })
@@ -191,7 +174,6 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', function() {
-  
         cy.fixture('example.json').as('sampleFile')
         cy.get('input[type="file"]').selectFile('@sampleFile').should(function($input) {
             expect($input[0].files[0].name).to.equal('example.json')
@@ -199,6 +181,22 @@ describe('Central de Atendimento ao Cliente TAT', function() {
 
     })
 
+    it('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', function() {
+        cy.get('#privacy a').should('have.attr', 'target', '_blank')
+
+    })
+
+    it('acessa a página da política de privacidade removendo o target e então clicando no link', function() {
+        cy.get('#privacy a').invoke('removeAttr','target','_blank').click()
+        cy.contains('Talking About Testing').should('be.visible')
+
+    })
+
+    it('testa a página da política de privacidade de forma independente', function() {
+        cy.get('#privacy a').invoke('removeAttr','target','_blank').click()
+        cy.contains('Talking About Testing').should('be.visible')
+
+    })
     
 })
 
